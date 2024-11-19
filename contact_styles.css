@@ -1,0 +1,237 @@
+
+body {
+    background-image: linear-gradient(rgba(255, 191, 0, 0.8), rgba(250, 239, 224, 0.8)), url(resources/contact/contact_background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*   Sectiune meniu   */
+
+.navigation_button {
+    width: 3em;
+    height: 3em; 
+    background-image: url('resources/bars-solid.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: none;
+    transition: transform 0.2s ease-in-out;
+    margin-left: 5px;
+}
+
+.navigation_button:hover {
+    transform: scale(1.1); 
+}
+
+.menu_content_wrapper {
+    flex-grow: 1;
+    padding: 0.5em;
+}
+
+.menu_content {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0px;
+    margin: 0px;
+    flex-grow: 1;
+    gap: 1em;
+    animation-play-state: paused;
+}
+
+.menu_content a{
+    text-decoration: none;
+    position: relative;
+    padding: 0.4em;
+    color: navy;
+}
+
+.navigation_bar nav{
+    display: flex;
+    align-items: center;
+}
+
+.menu_toggle {
+    display: none;
+}
+
+.menu_toggle:checked ~ .menu_content_wrapper {
+    animation-play-state: running;
+    display: flex;  
+    animation-name: aparitie_meniu;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+    
+
+@keyframes aparitie_meniu {
+    0% {opacity: 0;}
+    25% {opacity: 0.25;}
+    50% {opacity: 0.5;}
+    100% {opacity: 1;}
+ }
+
+ .menu_toggle:not(:checked) ~ .menu_content_wrapper {
+    animation-name: disparitie_meniu;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+        
+@keyframes disparitie_meniu {
+    0% {opacity: 1;}
+    25% {opacity: 0.5;}
+    50% {opacity: 0.25;}
+    100% {opacity: 0;
+    z-index: 1;}
+ }
+
+.navigation_bar {
+    background-color: #FAEFE0;
+    z-index: 1;
+    top: 0px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.6);
+    position: absolute;
+    top: 0; 
+    width: 100%; 
+    
+}
+
+.menu_content a:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-top: solid #FFBF00;
+    border-left: solid #FFBF00;
+    box-sizing: border-box;
+    transform-origin: left;
+    transition: 0.5s;
+}
+
+.menu_content a:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border-right: solid #FFBF00;
+    border-bottom: solid #FFBF00;
+    box-sizing: border-box;
+    transform-origin: right;
+    transition: 0.5s;
+}
+
+.menu_content a:hover:before {
+    transform: rotate(360deg);
+    width: 0.5em;
+    height: 0.5em
+}
+
+.menu_content a:hover:after {
+    transform: rotate(360deg);
+    width: 0.5em;
+    height: 0.5em
+}
+
+/*   Form section   */
+
+.form_window {
+    display: flex;
+    flex-direction: row;
+    width: 70vw;
+    height: 40vw;
+    background-color: #F8F4E6;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: space-evenly;    
+}
+
+.animated_jpeg {
+    background-image: url(resources/contact/dove.gif);
+    width: 50%;
+    height: 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.form_fields {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-grow: 1;
+}
+
+.form_fields h1 {
+    text-align: start;
+    font-size: 3vw;
+    margin: 5px;
+    margin-bottom: 2vw;
+}
+
+.form_fields input {
+    background-color: #e6e6e6;
+    border-radius: 10px;
+    border: none;
+    width: 25vw;
+    height: 3vw;
+    margin: 5px;
+    padding: 8px;
+}
+
+.form_fields textarea {
+    background-color: #e6e6e6;
+    border-radius: 10px;
+    border: none;
+    width: 25vw;
+    height: 15vw;
+    margin: 5px;
+    padding: 8px;
+    position: relative;
+    resize: none;
+}
+
+.form_fields button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e6e6e6;
+    font-family: monospace;
+    border-radius: 10px;
+    border: none;
+    width: 25vw;
+    height: 3vw;
+    margin: 5px;
+    padding: 8px;
+    background-color: #FFBF00;
+    transition: transform 0.2s ease-in-out;
+    font-size: 1.3vw;
+}
+
+.form_fields button:hover {
+    transform: scale(1.1);
+}
+
+.form_fields input::placeholder {
+    font-family: monospace;
+}
+
+@media (max-width: 600px) {
+    .form_window {
+        height: 55vw;
+    }
+    .form_fields button{
+        font-size: 2vw;
+    }
+}
