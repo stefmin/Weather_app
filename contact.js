@@ -23,18 +23,3 @@ class Submit_trigger {
 }
 
 let submit_actions = new Submit_trigger();
-
-// function load_page_in_background(){
-//     fetch('index.html')
-//         .then(response => response.text())
-//         .then(htmlContent => {
-//             const container = document.createElement('div');
-//             container.innerHTML = htmlContent;
-//             container.style.display = 'none'; // Hide it
-//             document.body.appendChild(container);
-//             // console.log(htmlContent)
-//         })
-//         .then(import("./script.js"))
-// }
-
-// load_page_in_background();
