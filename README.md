@@ -28,8 +28,10 @@ JSON schema validation
 
 Clone the repository:
 
-```git clone https://github.com/stefmin/Weather_app.git
-cd Weather_app```
+```
+git clone https://github.com/stefmin/Weather_app.git
+cd Weather_app
+```
 
 Open index.html in a browser to use the app.
 
